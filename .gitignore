@@ -9,7 +9,7 @@
 /coverage
 
 # server
-/server/config/dev
+/server/config/dev.js
 
 # production
 /build

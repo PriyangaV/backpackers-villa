@@ -11,8 +11,8 @@ const EMAIL_PATTERN = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"
 
 const RegisterForm = ({ onSubmit }) => {
   const { register, handleSubmit, errors, getValues } = useForm();
-  const randomStr = (Math.random() + 1).toString(36).substring(8);
-  const defaultPassword = 'test@1234';
+  // const randomStr = (Math.random() + 1).toString(36).substring(8);
+  // const defaultPassword = 'test@1234';
 
   return (
     <form
@@ -32,7 +32,7 @@ const RegisterForm = ({ onSubmit }) => {
           type="text"
           name="username"
           className="form-control"
-          defaultValue={randomStr}
+          // defaultValue={randomStr}
         />
         <FormError errors={errors} name="username">
           {(message) => {
@@ -70,7 +70,6 @@ const RegisterForm = ({ onSubmit }) => {
           type="email"
           name="email"
           className="form-control"
-          defaultValue={`${randomStr}@email.com`}
         />
         <FormError errors={errors} name="email">
           {(message) => {
@@ -97,7 +96,6 @@ const RegisterForm = ({ onSubmit }) => {
           type="password"
           name="password"
           className="form-control"
-          defaultValue={defaultPassword}
         />
         <FormError errors={errors} name="password">
           {(message) => {
@@ -127,7 +125,7 @@ const RegisterForm = ({ onSubmit }) => {
           type="password"
           name="passwordConfirmation"
           className="form-control"
-          defaultValue={defaultPassword}
+          // defaultValue={defaultPassword}
         />
         {errors.passwordConfirmation && (
           <div className="alert danger">

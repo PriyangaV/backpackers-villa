@@ -1,31 +1,9 @@
-// * Bootstrap Node Server
-// - balsamiq.cloud - https://balsamiq.cloud/snc4lx3/p74pkbl/r9051
-
-/**
- * ? Routes
- * ? Controllers
- * ? Models
- * TODO: process.env.PORT, connect string - dev.js
- */
-
-/**
- * * MongoDB Atlas - priya147(gmail)
- * - Create New Project
- * - Build New Cluster
- * - Database Access - Add User - test/test1234
- * - Network Access - Add IP - Whitelist Entry
- * - Mongoose Install and Connect
- * - Cluster - Connect - Via Project
- * ? test/test1234/backpackers-villa-dev(DB)
- * - Cluster - Connections - Add Own Data
- * * DB Name - Collection Name ModelName(Plural)
- */
-
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const config = require('./config/dev');
+const config = require('./config');
 const { provideMongoErrorHandler } = require('./middlewares');
+const path = require('path');
 
 // Routes
 const rentalRoutes = require('./routes/rentals');
@@ -100,6 +78,15 @@ app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/bookings', bookingRoutes);
 app.use('/api/v1/image-upload', imageUploadRoutes);
 
+if (process.env.NODE_ENV === 'production') {
+  const distPath = path.join(__dirname, '..', 'build');
+  app.use(express.static(distPath));
+
+  app.get('*', (req, res) => {
+    // return res.json({ message: 'hello universe!' });
+    return res.sendFile(path.resolve(distPath, 'index.html'));
+  });
+}
 app.listen(PORT, () => {
   console.log('Server is listening on port', PORT);
 });

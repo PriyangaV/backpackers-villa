@@ -9,8 +9,8 @@ const EMAIL_PATTERN = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"
 
 const LoginForm = ({ onSubmit }) => {
   const { register, handleSubmit, errors } = useForm();
-  const defaultEmail = 'imac@email.com';
-  const defaultPassword = 'test@1234';
+  // const defaultEmail = 'imac@email.com';
+  // const defaultPassword = 'test@1234';
 
   return (
     <form
@@ -30,7 +30,6 @@ const LoginForm = ({ onSubmit }) => {
           type="email"
           name="email"
           className="form-control"
-          defaultValue={defaultEmail}
         />
         <FormError errors={errors} name="email">
           {(message) => {
@@ -66,7 +65,6 @@ const LoginForm = ({ onSubmit }) => {
           type="password"
           name="password"
           className="form-control"
-          defaultValue={defaultPassword}
         />
         <FormError errors={errors} name="password">
           {(message) => {
