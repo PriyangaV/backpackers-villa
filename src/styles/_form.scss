@@ -1,0 +1,103 @@
+@import 'index.scss';
+
+/*
+========================
+Login
+========================
+*/
+
+.login-section {
+  padding-top: 3rem;
+  background: $clr-white;
+}
+
+.login-form {
+  width: 100%;
+  border-radius: $radius;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.banner {
+  display: none;
+}
+
+input,
+select,
+textarea {
+  width: 23rem;
+  padding: 0.5rem 0.25rem;
+  outline: none;
+  border: 1px solid $clr-white-12;
+  border-radius: $radius;
+}
+input[type='checkbox'] {
+  width: 1rem;
+}
+
+label,
+option {
+  color: $clr-black-1;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .prepend {
+    display: flex;
+  }
+  .price {
+    padding-left: 3rem;
+  }
+
+  .text {
+    padding: 0.22rem 0.75rem;
+    color: $clr-black-1;
+    background-color: $clr-grey-13;
+    border: 1px solid $clr-white-12;
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .login {
+    margin: 0 5rem;
+  }
+  .login-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .login-form {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .login-wrapper {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(50% - 3rem);
+    padding: 1rem;
+  }
+
+  .banner {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+      url('/images/bg.jpg') center/cover fixed no-repeat;
+  }
+  .text h1,
+  .text p {
+    color: $clr-white;
+  }
+}

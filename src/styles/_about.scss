@@ -1,0 +1,54 @@
+/*
+========================
+About
+========================
+*/
+
+.about {
+  background: $clr-black-1;
+  padding: 3rem;
+  .about-container {
+    letter-spacing: $spacing;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1 {
+      color: $clr-white;
+      margin-bottom: 2rem;
+      font-weight: normal;
+      font-size: 3rem;
+      .special {
+        margin-top: 1rem;
+        color: $clr-gold-brown;
+        text-align: center;
+      }
+    }
+    p {
+      color: $clr-white-12;
+      margin-bottom: 4rem;
+      width: 70%;
+      margin: 0 auto;
+      padding: 2rem;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+    a {
+      background: $clr-grey-11;
+      border: 1px solid transparent;
+      color: $clr-white;
+      padding: 0.75rem 2rem;
+      &:hover {
+        background: transparent;
+        color: $clr-gold-brown;
+        border: 1px solid $clr-white-12;
+      }
+    }
+  }
+}
+
+.about-details {
+  & h3 {
+    color: #fff;
+  }
+}

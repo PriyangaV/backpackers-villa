@@ -1,0 +1,441 @@
+/*
+========================
+Featured
+========================
+*/
+.featured-section {
+  margin-top: 0;
+  padding-top: 5rem;
+}
+
+.type- {
+  &house {
+    color: $clr-purple-dark;
+  }
+  &apartment {
+    color: $clr-brown-dark;
+  }
+  &condo {
+    color: $clr-pink-dark;
+  }
+}
+
+/*
+========================
+Single Tour
+========================
+*/
+
+.tour-card {
+  position: relative;
+  background: $clr-grey-11;
+  border-radius: $radius;
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+.tour-info {
+  text-align: center;
+  color: $clr-white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: $transition;
+  opacity: 0;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tour-info p {
+  text-transform: capitalize;
+  color: $clr-white;
+}
+.tour-info h4 {
+  text-transform: uppercase;
+  color: $clr-gold-brown;
+}
+
+.tour-info a.rental-link {
+  color: $clr-gold-brown;
+  padding: 0.25rem 1rem;
+  border: 1px solid $clr-white-12;
+  border-radius: $radius;
+  margin-top: 1rem;
+  background: $clr-white;
+}
+
+.featured.manage-featured {
+  & p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  & .tour-btns {
+    display: flex;
+    & button {
+      margin-right: 1rem;
+    }
+  }
+}
+.tour-card:hover .tour-info {
+  opacity: 1;
+}
+.tour-img-container {
+  position: relative;
+  height: 100%;
+}
+.tour-img {
+  height: 100%;
+  object-fit: cover;
+  transition: $transition;
+  border-radius: $radius;
+}
+.tour-card:hover img {
+  opacity: 0.1;
+}
+.tour-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0.25rem solid $clr-white;
+  border-radius: $radius;
+  transition: $transition;
+  opacity: 0;
+  z-index: -1;
+}
+.tour-card:hover::after {
+  opacity: 1;
+  transform: scale(0.8);
+}
+.featured {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.featured.manage-featured {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+
+@media screen and (min-width: 992px) {
+  // .featured {
+  //   display: grid;
+  //   grid-column-gap: 2rem;
+  //   grid-template-columns: repeat(3, 1fr);
+  //   grid-template-rows: repeat(2, 1fr);
+  //   grid-template-areas:
+  //     'a b c'
+  //     'a d e';
+  // }
+  // .tour-card-0 {
+  //   grid-area: a;
+  // }
+  // .tour-card-1 {
+  //   grid-area: b;
+  // }
+  // .tour-card-2 {
+  //   grid-area: c;
+  // }
+  // .tour-card-3 {
+  //   grid-area: d;
+  // }
+  // .tour-card-4 {
+  //   grid-area: e;
+  // }
+}
+
+.bookings-card {
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.booking-card {
+  border: 1px solid $clr-white-12;
+  // padding: 1rem;
+}
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  // border: 1px solid red;
+}
+
+.card-header {
+  border-bottom: 1px solid $clr-white-12;
+  text-align: center;
+  background: $clr-grey-14;
+  padding: 0.5rem;
+}
+.card-footer {
+  padding: 0.5rem;
+  border-top: 1px solid $clr-white-12;
+  text-align: center;
+  background: $clr-grey-14;
+}
+.card-body {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.card-body .btn-secondary {
+  margin-left: 0.5rem;
+}
+.page-title {
+  margin-bottom: 1rem;
+}
+
+/*
+========================
+Single Rental
+========================
+*/
+
+.rental-section {
+  background: $clr-white;
+}
+
+.single-rental {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.single-rental article {
+  // padding-top: 1rem;
+}
+.single-rental .reservation-form {
+  margin-top: 2rem;
+}
+.single-rental .rules {
+  & .assets {
+    margin-bottom: 1rem;
+  }
+  div {
+    margin-bottom: 2rem;
+  }
+  & h5 {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.single-rental-image {
+  max-width: 40rem;
+  max-height: 25rem;
+  align-self: center;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+.single-rental h1 {
+  text-transform: capitalize;
+  font-size: 2.3rem;
+  letter-spacing: $spacing;
+  color: $clr-black-1;
+  font-weight: normal;
+}
+.single-rental h2 {
+  color: $clr-black-1;
+}
+.single-rental p {
+  line-height: 2;
+  letter-spacing: 1px;
+  // color: $clr-black;
+}
+.single-rental .city {
+  color: $clr-gold-brown-1;
+  display: flex;
+  align-items: center;
+  & span {
+    margin-left: 0.25rem;
+    color: $clr-gold-brown-1;
+  }
+  & p {
+    margin-bottom: 0;
+    font-size: 0.75rem;
+  }
+}
+.single-rental .sub-info {
+  text-transform: uppercase;
+}
+.single-rental span {
+  margin-right: 1rem;
+  color: $clr-black-1;
+}
+.single-rental .bed-details,
+.description,
+.price {
+  margin-bottom: 1rem;
+  color: $clr-black-1;
+}
+
+.bed-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 1rem;
+  & div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  svg {
+    margin-right: 0.5rem;
+  }
+}
+.single-rental .assets {
+  margin-top: 1.25rem;
+  color: $clr-black-1;
+  margin-bottom: 0;
+}
+.single-rental hr {
+  border-color: $clr-white;
+}
+.single-rental .asset-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  // display: flex;
+  // justify-content: space-between;
+  text-transform: capitalize;
+  p {
+    color: $clr-grey-5;
+  }
+}
+.single-rental .location {
+  & .location-title {
+    margin: 2rem 0;
+  }
+}
+.single-rental .title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.single-rental .reviews {
+  & h3 {
+    margin-bottom: 1.5rem;
+  }
+  & .reviews-container {
+    display: flex;
+    & .user-icon {
+      margin-right: 1rem;
+      img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  & .room h3 {
+    margin-bottom: 2rem;
+  }
+}
+
+.booking-modal {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+  min-width: 30%;
+}
+.modal-footer {
+  align-self: end;
+  display: flex;
+  justify-content: flex-end;
+  .btn-secondary {
+    margin-right: 1rem;
+  }
+}
+.rental-owner {
+  float: right;
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+  span {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 300;
+    text-align: center;
+    margin-right: 0;
+    margin-top: 0.5rem;
+  }
+}
+.booking {
+  padding: 1rem;
+  border: 1px solid $clr-grey-14;
+  border-radius: $radius;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-color: $clr-white;
+  }
+}
+.booking-details {
+  margin-top: 1rem;
+}
+.reserve {
+  border: 2px solid red;
+}
+.booking-per-night {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  font-style: italic;
+}
+
+.asset-icon {
+  display: flex;
+  align-items: center;
+  margin: 1.25rem 0;
+  line-height: 2;
+  svg {
+    margin-right: 0.5rem;
+  }
+}
+
+.media-location-container {
+  display: grid;
+  align-content: center;
+  & .map-container {
+    max-width: 40rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .details {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    column-gap: 2rem;
+    align-content: center;
+    justify-content: center;
+  }
+  .booking {
+    margin-top: 0;
+  }
+
+  .media-location-container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    column-gap: 2rem;
+    align-content: center;
+    justify-content: center;
+    // .img-container,
+    // .map-container {
+    //   width: 100%;
+    // }
+  }
+  // .img-container {
+  //   display: flex;
+  //   column-gap: 2rem;
+  // }
+}

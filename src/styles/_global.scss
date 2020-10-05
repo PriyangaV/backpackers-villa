@@ -1,0 +1,373 @@
+/*
+========================
+Global Styles
+========================
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $ff-secondary;
+  background: $clr-white;
+  color: $clr-grey-1;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img:not(.nav-logo) {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: $spacing;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: $ff-primary;
+  color: $clr-black-1;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 0.5rem;
+  // color: $clr-grey-4;
+  font-size: 0.875rem;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/*
+========================
+Global Classes
+========================
+*/
+
+.btn {
+  text-transform: uppercase;
+  background: $clr-gold-brown-1;
+  color: $clr-white;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: $spacing;
+  display: inline-block;
+  font-weight: 400;
+  transition: $transition;
+  font-size: 0.875rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: $radius;
+  outline: none;
+  text-align: center;
+  &:disabled {
+    cursor: no-drop;
+    opacity: 0.65;
+  }
+}
+.btn:hover:not(:disabled) {
+  background: $clr-gold-brown-1;
+  color: $clr-white;
+  border-color: $clr-gold-brown-1;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: $clr-black-1;
+  box-shadow: none;
+}
+
+.btn-transparent {
+  background: transparent;
+  border: 1px solid $clr-gold-brown-1;
+  color: $clr-gold-brown-1;
+}
+
+.alert {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+.danger {
+  color: $clr-red-dark;
+}
+.alert-danger-box {
+  border: 1px solid $clr-red-dark;
+  color: $clr-red-dark;
+  background: $clr-red-light;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border-radius: $radius;
+  font-size: 0.875rem;
+}
+.alert-success-box {
+  border: 1px solid $clr-green-dark;
+  color: $clr-green-dark;
+  background: $clr-green-light;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border-radius: $radius;
+  font-size: 0.875rem;
+}
+.alert-info-box {
+  border: 1px solid $clr-yellow-dark;
+  color: $clr-yellow-dark;
+  background: $clr-yellow-light;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: $radius;
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: $spacing;
+}
+
+.editable-component {
+  display: flex;
+  .btn-container {
+    align-self: center;
+  }
+  .btn-editable {
+    margin-left: 0.25rem;
+  }
+}
+.editable-component-input {
+  display: inline-flex;
+}
+/*
+========================
+Section
+========================
+*/
+
+.section {
+  padding-bottom: 5rem;
+  margin-top: 5rem;
+  min-height: 100vh;
+  background: $clr-grey-12;
+}
+
+.section-title {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.section-title h1 {
+  text-transform: capitalize;
+  font-weight: normal;
+  color: $clr-black-1;
+  margin-bottom: 0.25rem;
+}
+.section-title span {
+  color: $clr-primary-5;
+}
+
+.section-title div {
+  text-align: center;
+  .line {
+    width: 10rem;
+    height: 0.25rem;
+    background: $clr-gold-brown;
+    display: inline-block;
+  }
+}
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+.search-section {
+  padding-top: 2rem;
+  margin-top: 4rem;
+}
+.search-container {
+  margin-right: 1rem;
+  .btn-secondary {
+    color: $clr-white;
+  }
+}
+
+input[type='search' i] {
+  width: 15rem;
+  padding: 0.55rem;
+  margin-right: 0.5rem;
+}
+.img-container {
+  input {
+    display: none;
+  }
+  .editable-component {
+    display: flex;
+    flex-direction: column;
+  }
+  .editable-component .btn-container {
+    align-self: flex-start;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+.img-upload-container {
+  input {
+    display: none;
+  }
+  .img-preview-container {
+    background: $clr-grey-12;
+    padding: 0.5rem;
+    .img-preview {
+      width: 50%;
+    }
+  }
+  .upload-img-buttons {
+    margin-top: 1rem;
+    .btn-secondary {
+      margin-right: 0.5rem;
+    }
+  }
+  .upload-result {
+    margin-bottom: 0;
+  }
+}
+.spinner-container {
+  padding: 1rem;
+}
+
+.img-crop-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sk-chase {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  animation: sk-chase 2.5s infinite linear both;
+}
+
+.sk-chase-dot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: sk-chase-dot 2s infinite ease-in-out both;
+}
+
+.sk-chase-dot:before {
+  content: '';
+  display: block;
+  width: 30%;
+  height: 30%;
+  background-color: $clr-gold-brown-1;
+  border-radius: 100%;
+  animation: sk-chase-dot-before 2s infinite ease-in-out both;
+}
+
+.sk-chase-dot:nth-child(1) {
+  animation-delay: -1.1s;
+}
+.sk-chase-dot:nth-child(2) {
+  animation-delay: -1s;
+}
+.sk-chase-dot:nth-child(3) {
+  animation-delay: -0.9s;
+}
+.sk-chase-dot:nth-child(4) {
+  animation-delay: -0.8s;
+}
+.sk-chase-dot:nth-child(5) {
+  animation-delay: -0.7s;
+}
+.sk-chase-dot:nth-child(6) {
+  animation-delay: -0.6s;
+}
+.sk-chase-dot:nth-child(1):before {
+  animation-delay: -1.1s;
+}
+.sk-chase-dot:nth-child(2):before {
+  animation-delay: -1s;
+}
+.sk-chase-dot:nth-child(3):before {
+  animation-delay: -0.9s;
+}
+.sk-chase-dot:nth-child(4):before {
+  animation-delay: -0.8s;
+}
+.sk-chase-dot:nth-child(5):before {
+  animation-delay: -0.7s;
+}
+.sk-chase-dot:nth-child(6):before {
+  animation-delay: -0.6s;
+}
+
+@keyframes sk-chase {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sk-chase-dot {
+  80%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sk-chase-dot-before {
+  50% {
+    transform: scale(0.4);
+  }
+  100%,
+  0% {
+    transform: scale(1);
+  }
+}

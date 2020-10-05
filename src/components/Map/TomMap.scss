@@ -1,0 +1,17 @@
+@import '@tomtom-international/web-sdk-maps';
+
+#bpv-map {
+  width: 100%;
+  height: 380px;
+  svg {
+    width: 2rem;
+  }
+  .bpv-marker {
+    width: 120px;
+    height: 120px;
+    margin-top: 60px; // half of the height for center
+    background: #ff0000;
+    border-radius: 50%;
+    opacity: 0.4;
+  }
+}
